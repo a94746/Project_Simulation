@@ -14,21 +14,21 @@ public class GameMap {
     private final int width;      // длина игрового поля
     private final int height;     // ширина игрового поля
 
-    private Map<Cell, Entity> entities = new HashMap<>();
+    private Map<Cell, Entity> cells = new HashMap<>();
 
     public GameMap(int side) {
         this.width = side;
         this.height = side;
-        this.entities = new HashMap<>();
+        this.cells = new HashMap<>();
     }
 
 
-    public void setEntities(Map<Cell, Entity> entities) {
-        this.entities = entities;
+    public void setCells(Map<Cell, Entity> entities) {
+        this.cells = entities;
     }
 
-    public Map<Cell, Entity> getEntities() {
-        return entities;
+    public Map<Cell, Entity> getCells() {
+        return cells;
     }
 
     public int getHeight() {
@@ -40,15 +40,15 @@ public class GameMap {
     }
 
     public void addEntity(Cell cell, Entity entity) {
-        entities.put(cell, entity);
+        cells.put(cell, entity);
     }
 
     public void removeEntity(Cell cell) {
-        entities.remove(cell);
+        cells.remove(cell);
     }
 
     public Entity getEntity(Cell cell) {
-        return entities.get(cell);
+        return cells.get(cell);
     }
 
 
@@ -57,7 +57,7 @@ public class GameMap {
         if (cell == null) {
             return true;
         }
-        return entities.containsKey(cell);
+        return cells.containsKey(cell);
     }
 
 }
