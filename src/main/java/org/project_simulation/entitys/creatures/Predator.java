@@ -1,7 +1,5 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.Cell;
-
 public class Predator extends Creature {
 
 
