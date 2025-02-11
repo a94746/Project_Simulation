@@ -1,12 +1,8 @@
 package org.project_simulation;
 
+import org.project_simulation.DTO.GameMap;
+import org.project_simulation.DTO.Renderer;
 import org.project_simulation.actions.InitActions;
-import org.project_simulation.entitys.Entity;
-import org.project_simulation.entitys.creatures.Herbivore;
-import org.project_simulation.entitys.creatures.Predator;
-import org.project_simulation.entitys.static_objects.Grass;
-import org.project_simulation.entitys.static_objects.Rock;
-import org.project_simulation.entitys.static_objects.Tree;
 
 public class Main{
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.project_simulation;
+package org.project_simulation.DTO;
 
 import org.project_simulation.entitys.Entity;
 
@@ -11,14 +11,14 @@ public class GameMap {
      * Игровая карта
      */
 
-    private int width;      // длина игрового поля
-    private int height;     // ширина игрового поля
+    private final int width;      // длина игрового поля
+    private final int height;     // ширина игрового поля
 
     private Map<Cell, Entity> entities = new HashMap<>();
 
     public GameMap(int side) {
-        setWidth(side);
-        setHeight(side);
+        this.width = side;
+        this.height = side;
         this.entities = new HashMap<>();
     }
 
@@ -37,14 +37,6 @@ public class GameMap {
 
     public int getWidth() {
         return width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
     }
 
     public void addEntity(Cell cell, Entity entity) {

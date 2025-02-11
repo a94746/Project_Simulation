@@ -1,4 +1,4 @@
-package org.project_simulation;
+package org.project_simulation.DTO;
 
 import org.project_simulation.entitys.Entity;
 
@@ -10,7 +10,7 @@ public class Renderer {
 
     private final GameMap gameMap;
 
-    Renderer(GameMap gameMap) {
+    public Renderer(GameMap gameMap) {
         this.gameMap = gameMap;
     }
 
@@ -25,12 +25,11 @@ public class Renderer {
                 cell = new Cell(x, y);
                 entity = gameMap.getEntity(cell);
 
-                String line = (gameMap.isCellEmpty(cell)) ? " " + entity.toString() + " " : " . " ;
+                StringBuilder line = new StringBuilder((gameMap.isCellEmpty(cell)) ? " " + entity.toString() + " " : " . ");
 
-                System.out.print(line);
+                System.out.println(line);
 
             }
-            System.out.println();
         }
     }
 }

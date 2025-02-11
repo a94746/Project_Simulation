@@ -1,7 +1,5 @@
-package org.project_simulation;
+package org.project_simulation.DTO;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Cell {
@@ -10,8 +8,8 @@ public class Cell {
      * Класс клетки (координаты)
      */
 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public Cell(int x, int y) {
         this.x = x;
@@ -26,13 +24,7 @@ public class Cell {
         return y;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
 
-    public void setY(int y) {
-        this.y = y;
-    }
 
 
     @Override

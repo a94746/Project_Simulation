@@ -1,18 +1,20 @@
 package org.project_simulation.entitys.static_objects;
 
-import org.project_simulation.Cell;
+import org.project_simulation.DTO.Cell;
 
 /**
  * Камень
  */
 
 public class Rock extends Item {
-    public Rock(Cell cell) {
-        super(cell);
+    public Rock(){
+
     }
 
     @Override
-    public String toString() {
+    public String getIcon() {
         return "⛰️";
     }
+
+
 }

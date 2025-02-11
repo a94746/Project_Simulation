@@ -1,6 +1,6 @@
 package org.project_simulation.entitys.static_objects;
 
-import org.project_simulation.Cell;
+import org.project_simulation.DTO.Cell;
 
 /**
  * Дерево
@@ -8,12 +8,10 @@ import org.project_simulation.Cell;
 
 
 public class Tree extends Item {
-    public Tree(Cell cell) {
-        super(cell);
-    }
+    public Tree() {}
 
     @Override
-    public String toString() {
+    public String getIcon() {
         return "\uD83C\uDF32";
     }
 }

@@ -1,7 +1,7 @@
 package org.project_simulation.actions;
 
-import org.project_simulation.Cell;
-import org.project_simulation.GameMap;
+import org.project_simulation.DTO.Cell;
+import org.project_simulation.DTO.GameMap;
 import org.project_simulation.entitys.Entity;
 import org.project_simulation.entitys.creatures.Herbivore;
 import org.project_simulation.entitys.creatures.Predator;
@@ -19,12 +19,15 @@ public class InitActions extends Action {
 
     private final GameMap gameMap;
     private final Random random = new Random();
-    private final int SIZE;
+    private final int SIZE = getSize();
 
 
     public InitActions(GameMap gameMap) {
         this.gameMap = gameMap;
-        this.SIZE = gameMap.getWidth() * gameMap.getHeight();
+    }
+
+    private int getSize(){
+        return gameMap.getWidth() * gameMap.getHeight();
     }
 
 
@@ -33,35 +36,34 @@ public class InitActions extends Action {
 
 
         for (int x = 0; x < SIZE / 9; x++) {
-            spawnEntity(new Grass(getRandomCell()));
+            spawnEntity(new Grass());
         }
 
         for (int x = 0; x < SIZE / 11; x++) {
-            spawnEntity(new Rock(getRandomCell()));
+            spawnEntity(new Rock());
         }
 
         for (int x = 0; x < SIZE / 11; x++) {
-            spawnEntity(new Tree(getRandomCell()));
+            spawnEntity(new Tree());
         }
 
         for (int x = 0; x < gameMap.getWidth(); x++) {
-            spawnEntity(new Predator(getRandomCell()));
+            spawnEntity(new Predator());
         }
 
         for (int x = 0; x < gameMap.getWidth(); x++) {
-            spawnEntity(new Herbivore(getRandomCell()));
+            spawnEntity(new Herbivore());
         }
 
 
     }
 
     private Cell getRandomCell() {
-        Cell cell;
 
         int randomCellX = random.nextInt(gameMap.getWidth());
         int randomCellY = random.nextInt(gameMap.getHeight());
 
-        cell = new Cell(randomCellX, randomCellY);
+        Cell cell = new Cell(randomCellX, randomCellY);
 
         return cell;
     }

@@ -1,6 +1,6 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.Cell;
+import org.project_simulation.DTO.Cell;
 
 public class Predator extends Creature {
 
@@ -13,11 +13,16 @@ public class Predator extends Creature {
 
 
 
-    public Predator(Cell cell) {
-        super(cell);
+    public Predator() {
+
         setAttack(1);
         setHealth(15);
         setSpeed(1);
+    }
+
+    @Override
+    public String getIcon() {
+        return "\uD83D\uDC3A";
     }
 
     public int setAttack() {
@@ -49,19 +54,9 @@ public class Predator extends Creature {
     }
 
     @Override
-    public String toString() {
-        return "\uD83D\uDC3A";
-    }
-
-    @Override
     public void makeMove() {
         //makeMove or attack
 
     }
 
-
-    @Override
-    public Cell getCurrentCell() {
-        return super.getCurrentCell();
-    }
 }

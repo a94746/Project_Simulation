@@ -1,4 +1,4 @@
 package org.project_simulation.actions;
 
-public class Action {
+abstract public class Action {
 }

@@ -1,6 +1,6 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.Cell;
+import org.project_simulation.DTO.Cell;
 import org.project_simulation.entitys.Entity;
 
 abstract public class Creature extends Entity {
@@ -14,9 +14,7 @@ abstract public class Creature extends Entity {
 
     private int speed;
 
-    public Creature(Cell cell) {
-        super(cell);
-    }
+
 
     public int getSpeed() {
         return speed;
@@ -32,11 +30,6 @@ abstract public class Creature extends Entity {
 
     public void setHealth(int health) {
         this.health = health;
-    }
-
-    @Override
-    public Cell getCurrentCell() {
-        return super.getCurrentCell();
     }
 
     abstract public void makeMove();
