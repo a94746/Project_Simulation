@@ -1,8 +1,5 @@
 package org.project_simulation.entitys.static_objects;
 
-import org.project_simulation.Cell;
-import org.project_simulation.entitys.Entity;
-
 /**
  * Абстрактный класс для статичных объектов
  */

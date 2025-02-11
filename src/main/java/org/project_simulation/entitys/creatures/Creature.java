@@ -1,8 +1,5 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.Cell;
-import org.project_simulation.entitys.Entity;
-
 abstract public class Creature extends Entity {
 
     /**

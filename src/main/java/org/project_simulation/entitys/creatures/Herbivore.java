@@ -1,9 +1,5 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.Cell;
-import org.project_simulation.GameMap;
-import org.project_simulation.actions.TurnActions;
-
 public class Herbivore extends Creature {
 
     /**
