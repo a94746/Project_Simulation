@@ -1,6 +1,5 @@
 package org.project_simulation.entitys.static_objects;
 
-import org.project_simulation.DTO.Cell;
 import org.project_simulation.entitys.Entity;
 
 /**

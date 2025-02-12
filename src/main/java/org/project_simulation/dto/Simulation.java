@@ -1,4 +1,4 @@
-package org.project_simulation.DTO;
+package org.project_simulation.dto;
 
 public class Simulation {
 

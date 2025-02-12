@@ -1,4 +1,4 @@
-package org.project_simulation.DTO;
+package org.project_simulation.dto;
 
 import java.util.Objects;
 
@@ -15,17 +15,6 @@ public class Cell {
         this.x = x;
         this.y = y;
     }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-
-
 
     @Override
     public boolean equals(Object o) {
