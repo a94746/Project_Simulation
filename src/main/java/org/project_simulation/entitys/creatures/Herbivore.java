@@ -1,7 +1,5 @@
 package org.project_simulation.entitys.creatures;
 
-import org.project_simulation.DTO.Cell;
-
 public class Herbivore extends Creature {
 
     /**

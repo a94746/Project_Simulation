@@ -1,7 +1,7 @@
 package org.project_simulation.actions;
 
-import org.project_simulation.DTO.Cell;
-import org.project_simulation.DTO.GameMap;
+import org.project_simulation.dto.Cell;
+import org.project_simulation.dto.GameMap;
 import org.project_simulation.entitys.Entity;
 import org.project_simulation.entitys.creatures.Herbivore;
 import org.project_simulation.entitys.creatures.Predator;
@@ -9,9 +9,10 @@ import org.project_simulation.entitys.static_objects.Grass;
 import org.project_simulation.entitys.static_objects.Rock;
 import org.project_simulation.entitys.static_objects.Tree;
 
+import java.util.Optional;
 import java.util.Random;
 
-public class InitActions extends Action {
+abstract public class InitActions extends Action {
 
     /**
      * Действия перед стартом симуляции - случайная расстановка всех сущностей
@@ -26,14 +27,7 @@ public class InitActions extends Action {
         this.gameMap = gameMap;
     }
 
-    private int getSize(){
-        return gameMap.getWidth() * gameMap.getHeight();
-    }
-
-
     public void initGameMap() {
-
-
 
         for (int x = 0; x < SIZE / 9; x++) {
             spawnEntity(new Grass());
@@ -79,7 +73,12 @@ public class InitActions extends Action {
                 return;
             }
         }
-        gameMap.addEntity(cell, entity);
+        Entity entity1;
+
+    }
+
+    private int getSize(){
+        return gameMap.getWidth() * gameMap.getHeight();
     }
 }
 
