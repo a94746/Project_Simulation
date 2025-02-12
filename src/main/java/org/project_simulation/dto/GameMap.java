@@ -1,10 +1,9 @@
-package org.project_simulation.dto;
+package org.project_simulation.DTO;
 
 import org.project_simulation.entitys.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class GameMap {
 
@@ -15,7 +14,7 @@ public class GameMap {
     private final int width;      // длина игрового поля
     private final int height;     // ширина игрового поля
 
-    private Map<Cell, Optional<Entity>> cells;
+    private Map<Cell, Entity> cells = new HashMap<>();
 
     public GameMap(int side) {
         this.width = side;
@@ -23,31 +22,12 @@ public class GameMap {
         this.cells = new HashMap<>();
     }
 
-    public void addEntity(Cell cell, Optional<Entity> entity) {
-        if(!isCellEmpty(cell)) {
-            cells.put(cell, entity);
-        }
 
+    public void setCells(Map<Cell, Entity> entities) {
+        this.cells = entities;
     }
 
-    public void removeEntity(Cell cell) {
-        cells.remove(cell);
-        cells.put(cell, Optional.empty());
-    }
-
-    public boolean isCellEmpty(Cell cell) {
-        if (cell == null) {
-            return true;
-        }
-        return cells.containsKey(cell);
-    }
-
-
-    public void setCells(Map<Cell, Optional<Entity>> cells) {
-        this.cells = cells;
-    }
-
-    public Map<Cell, Optional<Entity>> getCells() {
+    public Map<Cell, Entity> getCells() {
         return cells;
     }
 
@@ -59,15 +39,25 @@ public class GameMap {
         return width;
     }
 
-    public Optional<Entity> getEntity(Cell cell) {
-        if(!isCellEmpty(cell)) {
-            return Optional.empty();
-        }
+    public void addEntity(Cell cell, Entity entity) {
+        cells.put(cell, entity);
+    }
+
+    public void removeEntity(Cell cell) {
+        cells.remove(cell);
+    }
+
+    public Entity getEntity(Cell cell) {
         return cells.get(cell);
     }
 
 
 
-
+    public boolean isCellEmpty(Cell cell) {
+        if (cell == null) {
+            return true;
+        }
+        return cells.containsKey(cell);
+    }
 
 }
