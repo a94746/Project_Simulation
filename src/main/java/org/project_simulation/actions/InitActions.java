@@ -1,127 +1,17 @@
 package org.project_simulation.actions;
 
-import org.project_simulation.dto.Cell;
 import org.project_simulation.dto.GameMap;
-import org.project_simulation.entitys.Entity;
-import org.project_simulation.entitys.creatures.Herbivore;
-import org.project_simulation.entitys.creatures.Predator;
-import org.project_simulation.entitys.static_objects.Grass;
-import org.project_simulation.entitys.static_objects.Rock;
-import org.project_simulation.entitys.static_objects.Tree;
-
-import java.util.Optional;
-import java.util.Random;
+import org.project_simulation.dto.MapSettings;
 
 abstract public class InitActions extends Action {
+
 
     /**
      * Действия перед стартом симуляции - случайная расстановка всех сущностей
      */
 
-    private final GameMap gameMap;
-    private final Random random = new Random();
-    private final int SIZE = getSize();
 
-
-    public InitActions(GameMap gameMap) {
-        this.gameMap = gameMap;
-    }
-
-    public void initGameMap() {
-
-        for (int x = 0; x < SIZE / 9; x++) {
-            spawnEntity(new Grass());
-        }
-
-        for (int x = 0; x < SIZE / 11; x++) {
-            spawnEntity(new Rock());
-        }
-
-        for (int x = 0; x < SIZE / 11; x++) {
-            spawnEntity(new Tree());
-        }
-
-        for (int x = 0; x < gameMap.getWidth(); x++) {
-            spawnEntity(new Predator());
-        }
-
-        for (int x = 0; x < gameMap.getWidth(); x++) {
-            spawnEntity(new Herbivore());
-        }
-
-
-    }
-
-    private Cell getRandomCell() {
-
-        int randomCellX = random.nextInt(gameMap.getWidth());
-        int randomCellY = random.nextInt(gameMap.getHeight());
-
-        Cell cell = new Cell(randomCellX, randomCellY);
-
-        return cell;
-    }
-
-    private void spawnEntity(Entity entity) {
-
-        Cell cell = getRandomCell();
-        int attempts = SIZE;
-        while (gameMap.isCellEmpty(cell)) {
-            cell = getRandomCell();
-            attempts--;
-            if (attempts == 0) {
-                return;
-            }
-        }
-        Entity entity1;
-
-    }
-
-    private int getSize(){
-        return gameMap.getWidth() * gameMap.getHeight();
-    }
+    abstract public GameMap init(MapSettings mapSettings);
 }
-
-//    private void spawnEntity(Entity entity) {
-//
-//        Cell cell = getRandomCell();
-//
-//        for(int x = 0; x < gameMap.getWidth(); x++) {
-//            for(int y = 0; y < gameMap.getHeight(); y++) {
-//
-//                if (entity instanceof Predator predator) {
-//                    if (!gameMap.isCellEmpty(cell)){
-//                        gameMap.addEntity(cell, predator);
-//                    } else {
-//                        gameMap.addEntity(cell, new Predator(cell));
-//                    }
-//
-//                } else if (entity instanceof Herbivore herbivore) {
-//                    if (!gameMap.isCellEmpty(cell)){
-//                        gameMap.addEntity(cell, herbivore);
-//                    } else {
-//                        gameMap.addEntity(cell, new Herbivore(cell));
-//                    }
-//
-//                } else if (entity instanceof Grass grass) {
-//                    if (!gameMap.isCellEmpty(cell)){
-//                        gameMap.addEntity(cell, grass);
-//                    }
-//
-//                } else if (entity instanceof Tree tree) {
-//                    if (!gameMap.isCellEmpty(cell)){
-//                        gameMap.addEntity(cell, tree);
-//                    }
-//
-//                } else if (entity instanceof Rock rock) {
-//                    if (!gameMap.isCellEmpty(cell)){
-//                        gameMap.addEntity(cell, rock);
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
-
 
 
