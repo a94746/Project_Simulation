@@ -1,9 +1,14 @@
 package org.project_simulation.actions;
 
+
 import org.project_simulation.dto.GameMap;
 import org.project_simulation.dto.MapSettings;
 
 public class GetSize extends InitActions {
+
+    /**
+     * Действия перед началом игры
+     */
 
     private final GameMap gameMap;
 

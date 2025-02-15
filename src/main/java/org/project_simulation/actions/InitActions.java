@@ -1,5 +1,6 @@
 package org.project_simulation.actions;
 
+import org.project_simulation.dto.Cell;
 import org.project_simulation.dto.GameMap;
 import org.project_simulation.dto.MapSettings;
 

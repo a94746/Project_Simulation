@@ -9,13 +9,13 @@ import java.util.Optional;
 
 public class SpawnEntity extends InitActions {
 
+    /**
+     * Инициализация случайного существа
+     */
+
     GameMap gameMap;
     Entity entity;
 
-    public SpawnEntity(GameMap gameMap, Entity entity) {
-        this.gameMap = gameMap;
-        this.entity = entity;
-    }
 
     @Override
     public GameMap init(MapSettings mapSettings) {
@@ -23,11 +23,5 @@ public class SpawnEntity extends InitActions {
         return null;
     }
 
-    public void spawnEntity(GameMap gameMap, Cell cell) {
-        if(!gameMap.isCellEmpty(cell)){
-            gameMap.addEntity(cell, Optional.of(entity));
-        } else {
 
-        }
-    }
 }

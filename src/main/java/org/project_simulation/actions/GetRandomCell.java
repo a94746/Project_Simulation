@@ -8,21 +8,26 @@ import java.util.Random;
 
 public class GetRandomCell extends InitActions {
 
+    /**
+     * Возвращает случайную клетку
+     */
+
     GameMap gameMap;
+    Cell cell;
 
     @Override
     public GameMap init(MapSettings mapSettings) {
+
+
+        Random random = new Random();
+
+        int x = random.nextInt(mapSettings.getWidth());
+        int y = random.nextInt(mapSettings.getHeight());
+
         return null;
     }
 
-public Cell getRandomCell() {
 
-        Random random = new Random();
-        int x = random.nextInt(gameMap.getWidth());
-        int y = random.nextInt(gameMap.getHeight());
-
-        return new Cell(x, y);
-}
 
 
 }
