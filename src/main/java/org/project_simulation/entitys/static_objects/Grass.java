@@ -5,8 +5,7 @@ package org.project_simulation.entitys.static_objects;
  */
 
 public class Grass extends Item {
-    public Grass() {
-    }
+    public Grass() {}
 
     @Override
     public String getIcon() {

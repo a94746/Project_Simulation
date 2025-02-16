@@ -5,9 +5,7 @@ package org.project_simulation.entitys.static_objects;
  */
 
 public class Rock extends Item {
-    public Rock(){
-
-    }
+    public Rock(){}
 
     @Override
     public String getIcon() {
